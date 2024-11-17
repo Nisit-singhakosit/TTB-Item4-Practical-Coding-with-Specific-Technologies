@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ttb_interview_item4?useSSL=false
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+spring.jpa:
+  properties:
+    hibernate:
+      transaction:
+        jta:
+          platform: org.hibernate.service.jta.platform.internal.NoJtaPlatform
