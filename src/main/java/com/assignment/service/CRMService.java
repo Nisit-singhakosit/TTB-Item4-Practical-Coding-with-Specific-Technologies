@@ -11,5 +11,4 @@ public interface CRMService {
     List<ServiceRequest> getAllRequests();
     ServiceRequest updateStatus(Long id, String status);
     ServiceRequest requestStatus(Long id);
-    void forwardToBackOffice(ServiceRequest createdRequest);
 }

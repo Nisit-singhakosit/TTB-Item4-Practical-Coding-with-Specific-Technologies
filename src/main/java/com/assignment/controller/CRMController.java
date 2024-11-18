@@ -22,7 +22,6 @@ public class CRMController {
     @RequestMapping(path = "/request", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<ServiceRequest> createRequest(@RequestBody ServiceRequest request) {
         ServiceRequest createdRequest = crmService.createRequest(request);
-        crmService.forwardToBackOffice(createdRequest);
         return ResponseEntity.ok(createdRequest);
     }
 
@@ -34,7 +33,6 @@ public class CRMController {
     @RequestMapping(path = "/{id}", method = RequestMethod.PUT, produces = "application/json")
     public ResponseEntity<ServiceRequest> updateStatus(@PathVariable Long id, @RequestParam String status) {
         ServiceRequest createdRequest = crmService.updateStatus(id, status);
-        crmService.forwardToBackOffice(createdRequest);
         return ResponseEntity.ok(createdRequest);
     }
 }
